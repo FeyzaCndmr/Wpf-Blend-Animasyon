@@ -1,0 +1,59 @@
+﻿<Window x:Class="WpfBlendAnimasyon.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfBlendAnimasyon"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Storyboard x:Key="elipsKareket">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="elips">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="91"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="-150"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="71.84"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="elips">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="100"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="-59"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="282.5"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="elips">
+                <EasingColorKeyFrame KeyTime="0" Value="#FF26B60F"/>
+                <EasingColorKeyFrame KeyTime="0:0:1" Value="#FF0F1EB6"/>
+            </ColorAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="elips">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="100"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="600"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="elips">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="100"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="600"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="elips">
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="0.116"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="elips">
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="0.107"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Canvas>
+        <Ellipse x:Name="elips" Fill="#FF26B60F" Height="100" Canvas.Left="10" Stroke="Black" Canvas.Top="10" Width="100" RenderTransformOrigin="-0.15,0.06">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Button Content="Başlat" Padding="10" x:Name="btnBaslat" Canvas.Left="10" Canvas.Top="271"
+                Click="btnBaslat_Click" MouseEnter="btnBaslat_MouseEnter"/>
+    </Canvas>
+</Window>
